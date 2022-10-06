@@ -1,0 +1,121 @@
+.product-card {
+  cursor: auto;
+}
+
+.product-card.in-menu .img-box {
+  /* width: 230px; */
+  height: 200px;
+  position: relative;
+  overflow: hidden;
+}
+
+.product-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--default-transition);
+}
+
+.product-card:hover .product-img {
+  transform: scale(1.05);
+}
+
+.card-badge {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 8px;
+  font-size: 14px;
+}
+
+.card-badge ion-icon {
+  font-size: 13px;
+}
+
+.card-badge.green {
+  background: var(--pistachio);
+  color: var(--space-cadet);
+}
+
+.card-badge.red {
+  background: var(--red-orange-crayola);
+  color: var(--space-cadet);
+}
+
+.product-card .add-to-cart {
+  position: absolute;
+  background: var(--cultured);
+  border-radius: 35px;
+  padding: 6.5px 8px;
+  top: 12px;
+  right: 12px;
+  cursor: pointer;
+}
+
+.product-card .add-to-cart:hover {
+  background: rgb(236, 236, 236);
+}
+
+.product-card .add-to-cart .count {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  padding: 0 5px;
+  border-radius: 50%;
+  background: var(--saffron);
+  color: var(--space-cadet);
+}
+
+.product-card .add-to-cart:active .count {
+  transform: translate(0px, -1px);
+}
+
+.product-card .wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  background: var(--cultured);
+  margin-bottom: 15px;
+}
+
+.product-card.in-menu .product-name {
+  color: var(--space-cadet);
+  width: calc(100% - 60px);
+  font-size: 15px;
+  font-weight: 500;
+  padding-left: 15px;
+}
+
+.product-card .menu-product-price {
+  background: var(--saffron);
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--space-cadet);
+  font-size: 17px;
+  font-weight: 400;
+}
+
+.product-card .small {
+  font-size: 12px;
+  font-weight: 400;
+  margin-top: 5px;
+}
+
+.product-card .product-text {
+  font-size: 13px;
+  color: var(--rhythm);
+  line-height: 1.6;
+  letter-spacing: 0.4px;
+  margin-bottom: 15px;
+}
+
+.product .btn-primary {
+  margin-inline: auto;
+}

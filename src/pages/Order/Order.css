@@ -1,0 +1,325 @@
+.order-grid {
+  margin-top: 200px;
+  padding-bottom: 180px;
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+input[type="text"],
+input[type="tel"] {
+  /* height: 10px; */
+  font-size: 18px;
+}
+
+/* input[type="tel"] {
+} */
+
+.street,
+.house,
+.flat,
+.floor,
+.entrance {
+  display: grid;
+  width: 100%;
+}
+
+.flat.none,
+.floor.none,
+.entrance.none {
+  display: none;
+}
+
+form {
+  /* width: 200px; */
+  padding-top: 40px;
+}
+
+.name-phone {
+  display: grid;
+  grid-auto-flow: column;
+}
+
+.delivery {
+  padding-top: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.delivery .street {
+  grid-column: 1 / 3;
+}
+
+.private-house {
+  font-size: 17px;
+  padding: 20px 0 0 10px;
+  align-self: center;
+}
+
+.private-house input {
+  width: 17px;
+  height: 17px;
+}
+
+.person {
+  width: 50%;
+}
+
+.comments {
+  padding-top: 70px;
+}
+
+.way-payment {
+  padding-top: 50px;
+}
+
+.change-block {
+  display: none;
+  grid-template-columns: 20% 80%;
+  padding-top: 30px;
+}
+
+.change-block.active {
+  display: grid;
+}
+
+.change-block .no-change {
+  align-self: center;
+  padding-top: 10px;
+  /* padding-left: 20px; */
+}
+
+.no-change-label,
+.cash-label,
+.card-label {
+  padding-left: 5px;
+}
+
+.change-block .change input {
+  width: 100px;
+}
+
+.change-block.none,
+.card.none,
+.change.none {
+  display: none;
+}
+
+.cash {
+  padding-top: 20px;
+}
+
+.cash,
+.card {
+  padding: 20px 10px 10px;
+}
+
+.order-price {
+  width: 590px;
+  margin-top: 30px;
+  padding: 50px 25px 25px;
+  box-shadow: 2px 2px 20px 5px rgba(0, 0, 0, 0.1);
+}
+
+.order-price .sum,
+.total {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 25px;
+}
+
+.sum::before {
+  content: "";
+  border-bottom: 1px dotted black;
+  height: 11px;
+  width: 70%;
+  position: absolute;
+  bottom: 30px;
+  left: 105px;
+}
+
+.total::before {
+  content: "";
+  border-bottom: 1px dotted black;
+  height: 11px;
+  /* width: 66.5%; */
+  width: 48.5%;
+  position: absolute;
+  bottom: 30px;
+  left: 222px;
+}
+
+.order-price button {
+  width: 200px;
+  padding: 12px;
+}
+
+.personal-data {
+  font-size: var(--fs-5);
+  color: var(--rhythm);
+  margin-top: 20px;
+}
+
+.your-order {
+  /* margin-left: 20px; */
+  padding-left: 75px;
+}
+
+.your-order.up ul {
+  padding-top: 40px;
+}
+
+.your-order h3 {
+  /* padding-bottom: 40px; */
+}
+
+/* .your-order .order-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 10px solid white;
+  background: var(--cultured);
+  width: 90%;
+  padding: 10px;
+}
+
+.your-order .order-card div {
+  display: flex;
+  align-items: center;
+}
+
+.your-order .order-card div .count {
+  padding-right: 30px;
+}
+
+.order-card img {
+  border-radius: 50%;
+}
+
+.order-card .price {
+  height: 70px;
+  width: 70px;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  background: var(--saffron);
+} */
+
+/* .total-price {
+    font-size: 17px;
+    padding-top: 20px;
+  }
+  
+  .total-price b {
+    font-size: var(--fs-3);
+  } */
+
+/* For large mobile */
+@media (max-width: 450px) {
+  :root {
+    --fs-1: 54px;
+    --fs-2: 36px;
+    --fs-3: 20px;
+  }
+}
+
+/* For tablet */
+@media (max-width: 570px) {
+  :root {
+    /* --mw: 550px; */
+  }
+
+  .products-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* For large tablet */
+@media (max-width: 788px) {
+  :root {
+    --fs-1: 72px;
+    --fs-2: 40px;
+    --fs-3: 20px;
+
+    --mw: 600px;
+  }
+
+  .your-order.up h3 {
+    cursor: pointer;
+  }
+
+  .order-grid {
+    display: block;
+    padding: 0 30px 180px 30px;
+  }
+
+  .details {
+    padding-top: 70px;
+  }
+
+  .order-price .sum,
+  .total {
+    position: static;
+  }
+}
+
+/* For desktop */
+@media (max-width: 1024px) {
+  /* :root {
+    --py: 100px;
+    --mw: 950px;
+  } */
+
+  .order-price .sum,
+  .total {
+    position: static;
+  }
+  /* 
+  .sum::before {
+    width: 64%;
+  }
+
+  .total::before {
+    width: 20% !important;
+  } */
+}
+
+/* For large desktop */
+@media (max-width: 1200px) {
+  /* :root {
+    --mw: 1150px;
+  } */
+
+  .name-phone,
+  .delivery {
+    display: block;
+  }
+
+  .input-form {
+    width: 80%;
+  }
+
+  .floor,
+  .flat,
+  .house,
+  .entrance {
+    width: 50px;
+  }
+
+  .sum::before {
+    width: 64.7%;
+  }
+
+  .total::before {
+    width: 36.5%;
+  }
+
+  .your-order {
+    padding-left: 25px;
+    width: 100%;
+  }
+
+  .order-price {
+    width: calc(100% - 10px);
+  }
+}

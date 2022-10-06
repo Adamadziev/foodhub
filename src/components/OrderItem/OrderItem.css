@@ -1,0 +1,116 @@
+.your-order .order-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 10px solid white;
+  background: var(--cultured);
+  width: 91%;
+  padding: 10px;
+}
+
+.your-order.up {
+  display: none;
+}
+
+.your-order.up ul {
+  padding-top: 40px;
+}
+
+.your-order.up h3 {
+  border-bottom: 1px dotted black;
+  width: 140px;
+  /* width: 29%; */
+}
+
+.your-order .order-card div {
+  display: flex;
+  align-items: center;
+}
+
+.meal-name {
+  width: 200px;
+  padding-left: 30px;
+}
+
+.your-order .order-card div .count {
+  /* padding-right: 30px; */
+}
+
+.order-card img {
+  border-radius: 50%;
+}
+
+.order-card .count-price {
+  margin-left: 20px;
+}
+
+.order-card .price {
+  height: 70px;
+  width: 70px;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  background: var(--saffron);
+  margin-left: 30px;
+}
+
+@media (max-width: 518px) {
+  .your-order.up .order-card .meal-name {
+    width: 130px !important;
+    padding-left: 20px !important;
+  }
+
+  .order-card .price {
+    margin-left: 15px !important;
+  }
+}
+
+@media (max-width: 788px) {
+  .your-order {
+    display: none;
+  }
+
+  .your-order.up .order-card {
+    width: 100%;
+    height: 50%;
+  }
+
+  .your-order.up .order-card .meal-name {
+    width: 225px;
+    padding-left: 40px;
+  }
+
+  .order-card .price {
+    margin-left: 30px !important;
+  }
+
+  .your-order.up {
+    display: block;
+    padding-left: 0px;
+  }
+
+  .order-card .price {
+    width: 70px;
+    height: 60px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .your-order .order-card {
+    width: 103%;
+  }
+
+  .your-order .order-card .meal-name {
+    width: 130px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .order-card .price {
+    margin-left: 15px;
+  }
+
+  .order-card .meal-name {
+    width: 186px;
+  }
+}
