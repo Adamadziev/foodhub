@@ -11,11 +11,11 @@ export const Categories = ({
     setCategoryId(i);
     setCategoriesPopupOpen && setCategoriesPopupOpen(false);
   };
+
   return (
     <div className="categories">
       <ul className="categories-ul">
         {categoryList.map((category, i) => {
-          if (category.id === 0) return;
           return (
             <li
               key={category.id}

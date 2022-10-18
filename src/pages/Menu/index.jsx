@@ -28,7 +28,7 @@ export const Menu = () => {
   // const [dishes, setDishes] = React.useState([]);
   const [searchInput, setSearchInput] = React.useState("");
 
-  const [categoryId, setCategoryId] = React.useState(1);
+  const [categoryId, setCategoryId] = React.useState(0);
   const [sortId, setSortId] = React.useState(0);
 
   const [categoriesPopupOpen, setCategoriesPopupOpen] = React.useState(false);
@@ -53,12 +53,12 @@ export const Menu = () => {
   React.useEffect(() => {
     document.addEventListener("scroll", scrollHandler);
 
-    return function () {
+    return function() {
       document.removeEventListener("scroll", scrollHandler);
     };
   });
 
-  // // Фильтруем данные через бэкенд
+  // // Фильтрация данных на стороне сервера
   // React.useEffect(() => {
   //   axios
   //     .get(
@@ -208,9 +208,8 @@ export const Menu = () => {
                       </small>
                     </p>
                     <div
-                      className={`categories-popup ${
-                        categoriesPopupOpen && "active"
-                      }`}
+                      className={`categories-popup ${categoriesPopupOpen &&
+                        "active"}`}
                     >
                       <Categories
                         categoryId={categoryId}
@@ -249,18 +248,3 @@ export const Menu = () => {
 };
 
 export default Menu;
-
-// // Будет вызываться при каждом обновлении нашего хранилища(store) и делать ре-рендер
-// const mapStateToProps = (state) => {
-//   return {
-//     dishes: state.dishes.items, // если items изменится, компонент сделает ре-рендер
-//   };
-// };
-
-// const mapDispatchToProps = (dispatch) => {
-//   return {
-//     setEda: (dishes) => dispatch(setItems(dishes)),
-//   };
-// };
-
-// export default connect(mapStateToProps, mapDispatchToProps)(Menu);

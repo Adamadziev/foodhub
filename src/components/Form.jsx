@@ -16,34 +16,10 @@ export const Form = () => {
     reset,
   } = useForm();
 
-  // console.log(errors);
-
-  //   const [userName, setUserName] = React.useState("");
-  //   const [userPhone, setUserPhone] = React.useState("");
-  //   const [userStreet, setUserStreet] = React.useState("");
-  //   const [userHouse, setUserHouse] = React.useState("");
-  //   const [userFlat, setUserFlat] = React.useState("");
-  //   const [userFloor, setUserFloor] = React.useState("");
-  //   const [userEntrance, setUserEntrance] = React.useState("");
-  //   const [userComment, setUserComment] = React.useState("");
-  //   const [userCountPerson, setUserCountPerson] = React.useState("");
-  //   const [userChangeFrom, setUserChangeFrom] = React.useState("");
-
   const [checkHouse, setCheckHouse] = React.useState(false);
-  const [cashPay, setCashPay] = React.useState(false);
+  const [cashPay, setCashPay] = React.useState(true);
   const [onlinePay, setOnlinePay] = React.useState(false);
   const [noChange, setNoChange] = React.useState(false);
-
-  //   console.log("Имя - ", userName);
-  //   console.log("Телефон - ", userPhone);
-  //   console.log("Улица - ", userStreet);
-  //   console.log("Дом - ", userHouse);
-  //   console.log("Квартира - ", userFlat);
-  //   console.log("Этаж - ", userFloor);
-  //   console.log("Подъезд - ", userEntrance);
-  //   console.log("Комментарий к заказу - ", userComment);
-  //   console.log("Количество персон - ", userCountPerson);
-  //   console.log("Сдача с - ", userChangeFrom);
 
   const errorSign = () => {
     return <i style={{ color: "rgb(198,34,34)" }}>*</i>;
@@ -104,8 +80,6 @@ export const Form = () => {
                 minLength: 11,
               })}
               style={errors.phone && errorBorder()}
-              //   value={userPhone}
-              //   onChange={(e) => setUserPhone(e.target.value)}
               className="inp"
               type="tel"
             />
@@ -120,8 +94,6 @@ export const Form = () => {
                 required: true,
               })}
               style={errors.street && errorBorder()}
-              //   value={userStreet}
-              //   onChange={(e) => setUserStreet(e.target.value)}
               className="inp"
               type="text"
             />
@@ -133,8 +105,6 @@ export const Form = () => {
                 required: true,
               })}
               style={errors.house && errorBorder()}
-              //   value={userHouse}
-              //   onChange={(e) => setUserHouse(e.target.value)}
               className="inp"
               type="text"
             />
@@ -146,8 +116,6 @@ export const Form = () => {
                 required: !checkHouse,
               })}
               style={errors.flat && errorBorder()}
-              //   value={userFlat}
-              //   onChange={(e) => setUserFlat(e.target.value)}
               className="inp"
               type="text"
             />
@@ -159,8 +127,6 @@ export const Form = () => {
                 required: !checkHouse,
               })}
               style={errors.floor && errorBorder()}
-              //   value={userFloor}
-              //   onChange={(e) => setUserFloor(e.target.value)}
               className="inp"
               type="text"
             />
@@ -172,8 +138,6 @@ export const Form = () => {
                 required: !checkHouse,
               })}
               style={errors.entrance && errorBorder()}
-              //   value={userEntrance}
-              //   onChange={(e) => setUserEntrance(e.target.value)}
               className="inp"
               type="text"
             />
@@ -190,23 +154,11 @@ export const Form = () => {
         </div>
         <div className="comments input-form">
           Комментарий к заказу
-          <input
-            {...register("comment")}
-            // value={userComment}
-            // onChange={(e) => setUserComment(e.target.value)}
-            className="inp"
-            type="text"
-          />
+          <input {...register("comment")} className="inp" type="text" />
         </div>
         <div className="person input-form">
           Кол-во персон
-          <input
-            {...register("countPerson")}
-            // value={userCountPerson}
-            // onChange={(e) => setUserCountPerson(e.target.value)}
-            type="text"
-            className="inp"
-          />
+          <input {...register("countPerson")} type="text" className="inp" />
         </div>
         <div className="way-payment">
           <h4>Способ оплаты</h4>
@@ -216,6 +168,7 @@ export const Form = () => {
               type="radio"
               id="cash"
               name="contact"
+              defaultChecked={cashPay}
             />
             <label
               className="cash-label"
@@ -235,8 +188,6 @@ export const Form = () => {
                     required: !noChange && cashPay,
                   })}
                   style={errors.change && errorBorder()}
-                  //   value={userChangeFrom}
-                  //   onChange={(e) => setUserChangeFrom(e.target.value)}
                   type="text"
                   className="inp"
                 />

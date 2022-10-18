@@ -3,7 +3,7 @@ const initialState = {
   isLoaded: false,
 };
 
-// Редюсер определяет изменяется как состояние в ответ на экшены, отправленные в store
+// Редюсер определяет как изменяется состояние в ответ на экшены, отправленные в store
 const dishes = (state = initialState, action) => {
   if (action.type === "dishes/set") {
     return {
