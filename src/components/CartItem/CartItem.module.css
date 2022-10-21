@@ -1,47 +1,44 @@
-.cart-item {
+.cartItem {
   background: var(--cultured);
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   height: 70px;
-  /* grid-gap: 10px; */
   margin-bottom: 30px;
 }
 
-.cart-item .img-and-name {
+.imgAndName {
   display: flex;
   align-items: center;
   gap: 25px;
 }
 
-.cart-item .img-box {
+.imgBox {
   width: 70px;
   height: 70px;
-  /* margin-right: 15px; */
   overflow: hidden;
 }
 
-.cart-item .product-img {
+.productImg {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: var(--default-transition);
 }
 
-.cart-item:hover .product-img {
+.cartItem:hover .productImg {
   transform: scale(1.05);
 }
 
-.cart-item .product-name {
+.productName {
   color: var(--space-cadet);
   font-size: var(--fs-5);
   font-weight: 500;
-  /* padding-left: 20px; */
   width: calc(100% - 80px);
 }
 
-.cart-item .product-price {
+.productPrice {
   position: relative;
   background: var(--saffron);
   color: var(--space-cadet);
@@ -52,7 +49,7 @@
   align-items: center;
 }
 
-.cart-item .product-price button {
+.productPrice button {
   position: absolute;
   top: -10px;
   right: -10px;
@@ -64,25 +61,25 @@
   background-color: var(--saffron);
 }
 
-.cart-item .product-price button:hover {
+.productPrice button:hover {
   padding: 1.5px 7px;
 }
 
-.cart-item .product-price .small {
+.productPrice .small {
   display: inline-block;
   font-size: 15px;
   font-weight: 400;
   margin-top: 5px;
 }
 
-.count-and-price {
+.countAndPrice {
   display: grid;
   grid-auto-flow: column;
   align-items: center;
   gap: 40px;
 }
 
-.count-and-price .product-count {
+.productCount {
   font-size: 15px;
   padding: 0 13px 0 15px;
 
@@ -92,7 +89,7 @@
   grid-gap: 10px;
 }
 
-.count-and-price .product-count button {
+.productCount button {
   background-color: var(--saffron);
   color: white;
   padding: 0.5px 5px;
@@ -100,13 +97,12 @@
   border: 1px solid var(--saffron);
 }
 
-.count-and-price .product-count button:hover {
+.productCount button:hover {
   background-color: white;
   color: var(--saffron);
 }
 
-.cart-item .product-count button.inc-btn {
+.productCount button.incBtn {
   color: var(--saffron);
   background-color: white;
-  /* border: 1px solid white; */
 }

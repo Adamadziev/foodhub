@@ -1,20 +1,20 @@
 import React from "react";
 
-import "./Footer.css";
+import styles from "./Footer.module.css";
 
 export const Footer = () => {
   return (
-    <footer>
-      <div className="footer-wrapper">
+    <footer className={styles.footer}>
+      <div className={styles.footerWrapper}>
         <a href="#">
           <img
             src="/images/logo-footer.svg"
             alt="logo"
-            className="footer-brand"
+            className={styles.footerBrand}
             width="130"
           />
         </a>
-        <div className="social-link">
+        <div className={styles.socialLink}>
           <a href="#">
             <ion-icon name="logo-twitter"></ion-icon>
           </a>
@@ -28,7 +28,7 @@ export const Footer = () => {
             <ion-icon name="logo-youtube"></ion-icon>
           </a>
         </div>
-        <p className="copyright">
+        <p className={styles.copyright}>
           &copy; Copyright 2022 Foodhub. All Rights Reserved.
         </p>
       </div>

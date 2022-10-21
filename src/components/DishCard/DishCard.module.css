@@ -1,26 +1,25 @@
-.product-card {
+.productCard {
   cursor: auto;
 }
 
-.product-card.in-menu .img-box {
-  /* width: 230px; */
+.productCard.inMenu .imgBox {
   height: 200px;
   position: relative;
   overflow: hidden;
 }
 
-.product-img {
+.productImg {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: var(--default-transition);
 }
 
-.product-card:hover .product-img {
+.productCard:hover .productImg {
   transform: scale(1.05);
 }
 
-.card-badge {
+.cardBadge {
   position: absolute;
   top: 15px;
   left: 15px;
@@ -31,21 +30,21 @@
   font-size: 14px;
 }
 
-.card-badge ion-icon {
+.cardBadge ion-icon {
   font-size: 13px;
 }
 
-.card-badge.green {
+.cardBadge.green {
   background: var(--pistachio);
   color: var(--space-cadet);
 }
 
-.card-badge.red {
+.cardBadge.red {
   background: var(--red-orange-crayola);
   color: var(--space-cadet);
 }
 
-.product-card .add-to-cart {
+.productCard .addToCart {
   position: absolute;
   background: var(--cultured);
   border-radius: 35px;
@@ -55,11 +54,11 @@
   cursor: pointer;
 }
 
-.product-card .add-to-cart:hover {
+.productCard .addToCart:hover {
   background: rgb(236, 236, 236);
 }
 
-.product-card .add-to-cart .count {
+.productCard .addToCart .count {
   position: absolute;
   top: -8px;
   right: -8px;
@@ -69,11 +68,11 @@
   color: var(--space-cadet);
 }
 
-.product-card .add-to-cart:active .count {
+.productCard .addToCart:active .count {
   transform: translate(0px, -1px);
 }
 
-.product-card .wrapper {
+.productCard .wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -82,7 +81,7 @@
   margin-bottom: 15px;
 }
 
-.product-card.in-menu .product-name {
+.productCard.inMenu .productName {
   color: var(--space-cadet);
   width: calc(100% - 60px);
   font-size: 15px;
@@ -90,7 +89,7 @@
   padding-left: 15px;
 }
 
-.product-card .menu-product-price {
+.productCard .menuProductPrice {
   background: var(--saffron);
   width: 60px;
   height: 60px;
@@ -102,13 +101,13 @@
   font-weight: 400;
 }
 
-.product-card .small {
+.productCard .small {
   font-size: 12px;
   font-weight: 400;
   margin-top: 5px;
 }
 
-.product-card .product-text {
+.productCard .productText {
   font-size: 13px;
   color: var(--rhythm);
   line-height: 1.6;
@@ -116,6 +115,6 @@
   margin-bottom: 15px;
 }
 
-.product .btn-primary {
+.product .btnPrimary {
   margin-inline: auto;
 }

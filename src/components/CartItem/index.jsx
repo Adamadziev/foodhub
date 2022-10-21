@@ -6,7 +6,7 @@ import {
   incCartItem,
 } from "../../redux/actions/cart";
 
-import "./CartItem.css";
+import styles from "./CartItem.module.css";
 
 export const CartItem = ({ id, imgUrl, name, price, count }) => {
   const dispatch = useDispatch();
@@ -26,24 +26,24 @@ export const CartItem = ({ id, imgUrl, name, price, count }) => {
   };
 
   return (
-    <div className="cart-item">
-      <div className="img-and-name">
-        <div className="img-box">
+    <div className={styles.cartItem}>
+      <div className={styles.imgAndName}>
+        <div className={styles.imgBox}>
           <img
             src={imgUrl}
-            alt=""
-            className="product-img"
+            alt="cart-item-image"
+            className={styles.productImg}
             width="50"
             height="50"
             loading="lazy"
           />
         </div>
-        <h5 className="product-name">{name}</h5>
+        <h5 className={styles.productName}>{name}</h5>
       </div>
-      <div className="count-and-price">
-        <div className="product-count">
+      <div className={styles.countAndPrice}>
+        <div className={styles.productCount}>
           <button
-            className={count === 1 ? "inc-btn" : null}
+            className={count === 1 ? styles.incBtn : null}
             onClick={onClickDec}
           >
             -
@@ -51,9 +51,9 @@ export const CartItem = ({ id, imgUrl, name, price, count }) => {
           <p>{count}</p>
           <button onClick={onClickInc}>+</button>
         </div>
-        <p className="product-price">
+        <p className={styles.productPrice}>
           {price}
-          <span className="small">₽</span>
+          <span className={styles.small}>₽</span>
           <button onClick={onClickDelete}>&#215;</button>
         </p>
       </div>
