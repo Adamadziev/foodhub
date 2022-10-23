@@ -1,0 +1,100 @@
+.orderCard {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 10px solid white;
+  background: var(--cultured);
+  width: 91%;
+  padding: 10px;
+}
+
+.yourOrder.up {
+  display: none;
+}
+
+.yourOrder.up ul {
+  padding-top: 40px;
+}
+
+.yourOrder.up h3 {
+  border-bottom: 1px dotted black;
+  width: 140px;
+}
+
+.orderCard div {
+  display: flex;
+  align-items: center;
+}
+
+.mealName {
+  width: 200px;
+  padding-left: 30px;
+}
+
+.orderCard img {
+  border-radius: 50%;
+}
+
+.orderCard .countPrice {
+  margin-left: 20px;
+}
+
+.orderCard .price {
+  height: 70px;
+  width: 70px;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  background: var(--saffron);
+  margin-left: 30px;
+}
+
+@media (max-width: 518px) {
+  .mealName {
+    width: 130px !important;
+    padding-left: 20px !important;
+  }
+
+  .orderCard .price {
+    margin-left: 15px !important;
+  }
+}
+
+@media (max-width: 788px) {
+  .orderCard {
+    width: 100%;
+    height: 50%;
+  }
+
+  .mealName {
+    width: 225px;
+    padding-left: 40px;
+  }
+
+  .orderCard .price {
+    margin-left: 30px !important;
+  }
+
+  .orderCard .price {
+    width: 70px;
+    height: 60px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .orderCard {
+    width: 103%;
+  }
+  .mealName {
+    width: 130px;
+  }
+}
+
+@media (max-width: 1200px) {
+  .orderCard .price {
+    margin-left: 15px;
+  }
+  .mealName {
+    width: 186px;
+  }
+}

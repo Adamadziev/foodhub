@@ -20,7 +20,6 @@ export const DishCard = ({
   };
 
   const cartItemCount = cartItems.find((item) => item.id === id);
-  console.log(styles);
   return (
     <div className={styles.productCard + " " + styles.inMenu}>
       <div className={styles.imgBox}>

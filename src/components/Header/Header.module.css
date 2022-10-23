@@ -1,0 +1,147 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  padding: 20px 30px;
+  background: hsla(0, 0%, 100%, 0.99);
+  border-bottom: 1px solid hsla(0, 0%, 0%, 0.05);
+  box-shadow: 0 0 10px hsla(0, 0%, 0%, 0.05);
+  z-index: 5;
+}
+
+.navbarWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbarNav {
+  background: hsla(0, 0%, 100%, 0.9);
+  position: absolute;
+  top: 91px;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 91px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  padding: 35px;
+  backdrop-filter: blur(10px);
+  transform: translateY(50px);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none; /* Делаем так чтоб кнопки не нажимались, тк они в opacity: 0 */
+  /* transition: 0.3s ease-in-out; */
+}
+
+.navbarNav.active {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+  /* color: var(--cultured); */
+}
+
+.navLink {
+  font-size: var(--fs-4);
+  /* transition: 2s ease; */
+}
+
+.navLink:hover {
+  color: var(--saffron) !important;
+}
+
+.navLink:active {
+  color: var(--saffron);
+}
+
+.navLink:visited {
+  color: black;
+}
+
+.navbarBtnGroup {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.shoppingCartBtn {
+  position: relative;
+  background: var(--cultured);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid var(--white);
+}
+
+.shoppingCartBtn .count {
+  background: var(--saffron);
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  height: 20px;
+  min-width: 20px;
+  display: flex;
+  align-items: center;
+  padding: 0 7px;
+  border-radius: 20px;
+  color: var(--space-cadet);
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.menuToggleBtn {
+  display: flex;
+  flex-direction: column;
+  width: 20px;
+  gap: 5px;
+}
+
+.menuToggleBtn .line {
+  background: var(--space-cadet);
+  width: 20px;
+  height: 2px;
+  border-radius: 2px;
+  transition: 0.25s ease;
+}
+
+.menuToggleBtn.active .one {
+  transform: translateY(7px) rotate(-45deg);
+}
+
+.menuToggleBtn.active .two {
+  transform: rotate(45deg);
+}
+
+.menuToggleBtn.active .three {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+@media (min-width: 1024px) {
+  .navbar {
+    padding: 35px 30px;
+  }
+
+  .navbarNav {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    width: auto;
+    height: auto;
+    transform: translateY(0);
+    padding: 0;
+    flex-direction: row;
+    gap: 50px;
+    pointer-events: all;
+  }
+
+  .menuToggleBtn {
+    display: none;
+  }
+}

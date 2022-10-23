@@ -53,7 +53,7 @@ export const Menu = () => {
   React.useEffect(() => {
     document.addEventListener("scroll", scrollHandler);
 
-    return function() {
+    return function () {
       document.removeEventListener("scroll", scrollHandler);
     };
   });
@@ -208,12 +208,14 @@ export const Menu = () => {
                       </small>
                     </p>
                     <div
-                      className={`categories-popup ${categoriesPopupOpen &&
-                        "active"}`}
+                      className={`categories-popup ${
+                        categoriesPopupOpen && "active"
+                      }`}
                     >
                       <Categories
                         categoryId={categoryId}
                         setCategoryId={setCategoryId}
+                        categoriesPopupOpen={categoriesPopupOpen}
                         setCategoriesPopupOpen={setCategoriesPopupOpen}
                       />
                     </div>

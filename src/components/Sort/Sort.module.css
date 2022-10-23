@@ -1,0 +1,26 @@
+.sortUl {
+  background: var(--cultured);
+  text-align: left;
+  padding: 15px;
+}
+
+.sortUl li {
+  margin-bottom: 30px;
+  cursor: pointer;
+}
+
+.sortUl li.active {
+  color: white;
+  border: 3px solid var(--saffron);
+  background: var(--saffron);
+}
+
+.sortUl li:last-child {
+  margin-bottom: 0px;
+}
+
+@media (max-width: 890px) {
+  .sortUl {
+    padding: 5px;
+  }
+}

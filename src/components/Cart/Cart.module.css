@@ -1,0 +1,134 @@
+/* @import url("../../Css/vars.css"); */
+
+.btn {
+  height: 55px;
+  padding: 0 25px;
+  color: var(--space-cadet);
+  font-size: 14px;
+  font-weight: 500;
+  transition: var(--default-transition);
+}
+
+.btn:hover {
+  filter: saturate(1.05) brightness(1.05);
+}
+
+.btnPrimary {
+  background: var(--saffron);
+}
+
+.cartBox {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  max-width: 400px;
+  width: 100%;
+  height: calc(100vh - 91px);
+  background: hsla(0, 0%, 100%, 0.99);
+  box-shadow: -1px -1px 3px 0 hsla(0, 0%, 0%, 0.05);
+  /* backdrop-filter: blur(10px); */
+  transform: translateX(100%);
+  visibility: hidden;
+  z-index: 10;
+  transition: 0.4s ease-in-out;
+}
+
+.cartBoxActive {
+  transform: translateX(0);
+  visibility: visible;
+}
+
+.cartBoxUl {
+  height: 100%;
+  padding: 30px;
+  padding-bottom: 120px;
+  overflow-y: auto;
+}
+
+.cartBoxUl::-webkit-scrollbar {
+  display: none;
+}
+
+.emptyCart {
+  position: absolute;
+  top: 25%;
+  left: 25%;
+
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  grid-gap: 15px;
+  color: var(--space-cadet);
+}
+
+.emptyCartNone {
+  display: none;
+}
+
+.emptyCartBtn {
+  background-color: var(--saffron);
+  padding: 10px 40px;
+  color: var(--space-cadet);
+  font-weight: 400;
+  /* height: 55px;
+  padding: 0 25px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: var(--default-transition); */
+}
+
+.orderBtn.disabled {
+  color: white;
+  background-color: rgb(219, 219, 219);
+  pointer-events: none;
+  /* disabled: true; */
+}
+
+.cartTitle {
+  color: var(--space-cadet);
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+.cartBtnGroup {
+  background: var(--white);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: grid;
+  padding: 30px;
+  border-top: 1px solid hsla(0, 0%, 0%, 0.1);
+  z-index: 15;
+}
+
+.cartBtnGroup button {
+  margin: 0 20px;
+}
+
+.disabledLink {
+  cursor: pointer;
+}
+
+@media (min-width: 768px) {
+  .cartItem .productPrice {
+    font-size: 16px;
+  }
+}
+
+/* For desktop */
+@media (min-width: 1024px) {
+  .cartBox {
+    max-width: 460px;
+    height: calc(100vh - 121px);
+  }
+
+  .cartBoxUl {
+    padding: 40px;
+    padding-bottom: 150px;
+  }
+
+  .cartBtnGroup {
+    padding: 30px 40px;
+  }
+}

@@ -1,9 +1,10 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import { Cart } from "../Cart";
 import { CartItem } from "../CartItem";
 
-import "./Header.css";
+import styles from "./Header.module.css";
 
 export const Header = () => {
   const cartItems = useSelector((state) => state.cart.items);
@@ -12,91 +13,46 @@ export const Header = () => {
 
   return (
     <header>
-      <nav className="navbar">
-        <div className="navbar-wrapper">
+      <nav className={styles.navbar}>
+        <div className={styles.navbarWrapper}>
           <Link to="/">
             <img src="/images/logo.svg" alt="logo" width="130" />
           </Link>
-          <ul className="navbar-nav">
+          <ul className={styles.navbarNav}>
             <li>
-              <Link to="/" className="nav-link">
+              <Link to="/" className={styles.navLink}>
                 Главная
               </Link>
             </li>
             <li>
-              <Link to="/menu" className="nav-link">
+              <Link to="/menu" className={styles.navLink}>
                 Меню
               </Link>
             </li>
             {/* <li>
-              <Link to="/" className="nav-link">
+              <Link to="/" className={styles.navLink}>
                 Доставка
               </Link>
             </li> */}
           </ul>
-          <div className="navbar-btn-group">
+          <div className={styles.navbarBtnGroup}>
             <button
               onClick={() => setIsCartActive((prev) => !prev)}
-              className="shopping-cart-btn"
+              className={styles.shoppingCartBtn}
             >
               <img src="/images/cart.svg" alt="shopping cart icon" width="18" />
-              <span className="count">{cartItems.length}</span>
+              <span className={styles.count}>{cartItems.length}</span>
             </button>
-            <button className="menu-toggle-btn">
-              <span className="line one"></span>
-              <span className="line two"></span>
-              <span className="line three"></span>
+            <button className={styles.menuToggleBtn}>
+              <span className={`${styles.line} ${styles.one}`}> </span>
+              <span className={`${styles.line} ${styles.two}`}> </span>
+              <span className={`${styles.line} ${styles.three}`}> </span>
             </button>
           </div>
         </div>
       </nav>
 
-      <div className={`cart-box ${isCartActive && "active"}`}>
-        <ul className="cart-box-ul">
-          <h4 className="cart-h4">Корзина</h4>
-          {cartItems.map((item, i) => {
-            return (
-              <CartItem
-                key={i}
-                id={item.id}
-                name={item.name}
-                imgUrl={item.imgUrl}
-                price={item.price}
-                count={item.count}
-              />
-            );
-          })}
-          <div className={`empty-cart ${!cartItems.length ? "active" : null}`}>
-            <img src="images/empty-cart.jpg" />
-            <h3>Корзина пустая</h3>
-            <Link to="/menu">
-              <button
-                onClick={() => setIsCartActive(false)}
-                className="empty-cart-btn"
-              >
-                За покупками
-              </button>
-            </Link>
-          </div>
-        </ul>
-        {/* <button className="btn btn-secondary">View Order</button> */}
-        <div>
-          <Link
-            to="/order"
-            style={{ pointerEvents: cartItems.length === 0 && "none" }}
-          >
-            <div className="cart-btn-group">
-              <button
-                className={`btn btn-primary order-btn ${
-                  !cartItems.length ? "disabled" : null
-                }`}
-              >
-                Оформить заказ
-              </button>
-            </div>
-          </Link>
-        </div>
-      </div>
+      <Cart isCartActive={isCartActive} setIsCartActive={setIsCartActive} />
     </header>
   );
 };

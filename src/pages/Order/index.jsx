@@ -5,6 +5,7 @@ import { Footer } from "../../components/Footer";
 import { Form } from "../../components/Form";
 import { Header } from "../../components/Header";
 import { OrderItem } from "../../components/OrderItem";
+import { YourOrder } from "../../components/YourOrder";
 
 import "./Order.css";
 
@@ -21,7 +22,7 @@ export const Order = () => {
     <>
       <Header />
       <section className="order-grid">
-        <div className="your-order up">
+        <div className="your-order-mobile">
           <h3 onClick={() => setOrderList((prev) => !prev)}>Состав заказа</h3>
           {orderList && (
             <ul>
@@ -32,7 +33,8 @@ export const Order = () => {
           )}
         </div>
         <Form />
-        <div className="your-order">
+        <YourOrder />
+        {/* <div className="your-order">
           {cartItems.length !== 0 ? (
             <>
               <h3>Состав заказа</h3>
@@ -45,7 +47,7 @@ export const Order = () => {
           ) : (
             <h3>Вы ничего не добавили в корзину</h3>
           )}
-        </div>
+        </div> */}
       </section>
       <Footer />
     </>

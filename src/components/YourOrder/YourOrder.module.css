@@ -1,0 +1,21 @@
+.yourOrder {
+  padding-left: 75px;
+  /* padding-top: 40px; */
+}
+
+.yourOrder ul {
+  padding-top: 40px;
+}
+
+@media (max-width: 1200px) {
+  .yourOrder {
+    padding-left: 25px;
+    width: 100%;
+  }
+}
+
+@media (max-width: 788px) {
+  .yourOrder {
+    display: none;
+  }
+}
