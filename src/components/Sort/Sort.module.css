@@ -11,7 +11,7 @@
 
 .sortUl li.active {
   color: white;
-  border: 3px solid var(--saffron);
+  border: 4px solid var(--saffron);
   background: var(--saffron);
 }
 

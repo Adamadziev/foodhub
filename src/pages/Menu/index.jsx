@@ -10,10 +10,10 @@ import { Header } from "../../components/Header";
 
 import { categoryList, sortList } from "../../data";
 
-import "./Menu.css";
-
 import { useSelector, useDispatch } from "react-redux";
 import { setDishes } from "../../redux/actions/dishes";
+
+import styles from "./Menu.module.css";
 
 // import { connect } from "react-redux";
 // import store from "../../redux/store";
@@ -25,6 +25,7 @@ export const Menu = () => {
   const dishes = useSelector((state) => state.dishes);
   const dispatch = useDispatch();
 
+  const [isMounted, setIsMounted] = React.useState(false);
   // const [dishes, setDishes] = React.useState([]);
   const [searchInput, setSearchInput] = React.useState("");
 
@@ -39,6 +40,7 @@ export const Menu = () => {
   const limitOnPage = 12;
 
   React.useEffect(() => {
+    window.scrollTo(0, 0);
     axios
       .get(`https://62c1dce62af60be89ecefccf.mockapi.io/react-foodhub_dishes`)
       .then((res) => {
@@ -47,7 +49,11 @@ export const Menu = () => {
   }, []);
 
   React.useEffect(() => {
-    window.scrollTo(0, 0);
+    if (isMounted) {
+      window.scrollTo(0, 480);
+    } else {
+      setIsMounted(true);
+    }
   }, [categoryId, sortId, searchInput]);
 
   React.useEffect(() => {
@@ -132,32 +138,35 @@ export const Menu = () => {
   return (
     <>
       <Header />
-      <main>
-        <section className="menu">
+      <main className={styles.mainWrapper}>
+        {/* <h1 className={styles.mainTitle}>Welcome to React Foodhub project!</h1> */}
+        <section className={styles.banner}>
+          <img src={"./images/banner.png"} />
+        </section>
+        <section className={styles.menu}>
           <h1>Меню</h1>
-          <div className="menu-grid">
-            <div className="left-side-container">
-              <h3 className="text-category">Категории</h3>
-              <div className="left-side">
+          <div className={styles.menuGrid}>
+            <div className={styles.leftSideContainer}>
+              <h3 className={styles.textCategory}>Категории</h3>
+              <div className={styles.leftSide}>
                 <Categories
                   categoryId={categoryId}
                   setCategoryId={setCategoryId}
                 />
-                <div className="sort">
+                <div className={styles.sort}>
                   <h3>Сортировать по:</h3>
                   <Sort sortId={sortId} setSortId={setSortId} />
                 </div>
               </div>
             </div>
-            <div className="right-side">
-              <div className="choosed-category">
-                <div className="search-block-container">
+            <div className={styles.rightSide}>
+              <div className={styles.choosedCategory}>
+                <div className={styles.searchBlockContainer}>
                   <h1>{categoryList[categoryId].name}</h1>
-                  <div className="search-block">
+                  <div className={styles.searchBlock}>
                     <input value={searchInput} onChange={onChangeSearchInput} />
                     <svg
-                      className="search"
-                      // enablBackground="new 0 0 32 32"
+                      className={styles.search}
                       id="EditableLine"
                       version="1.1"
                       viewBox="0 0 32 32"
@@ -190,7 +199,7 @@ export const Menu = () => {
                       ></line>
                     </svg>
                     <svg
-                      className="search-clear"
+                      className={styles.searchClear}
                       onClick={() => setSearchInput("")}
                       viewBox="0 0 20 20"
                       xmlns="http://www.w3.org/2000/svg"
@@ -199,8 +208,8 @@ export const Menu = () => {
                     </svg>
                   </div>
                 </div>
-                <div className="categories-sort active">
-                  <div className="categories-popup-container">
+                <div className={`${styles.categoriesSort} ${styles.active}`}>
+                  <div className={styles.categoriesPopupContainer}>
                     <p>
                       <b>Категория:</b>{" "}
                       <small onClick={onClickCategoriesPopup}>
@@ -208,8 +217,8 @@ export const Menu = () => {
                       </small>
                     </p>
                     <div
-                      className={`categories-popup ${
-                        categoriesPopupOpen && "active"
+                      className={`${styles.categoriesPopup} ${
+                        categoriesPopupOpen ? styles.active : ""
                       }`}
                     >
                       <Categories
@@ -220,14 +229,18 @@ export const Menu = () => {
                       />
                     </div>
                   </div>
-                  <div className="sort-popup-container">
+                  <div className={styles.sortPopupContainer}>
                     <p>
                       <b>Сортировать по:</b>{" "}
                       <small onClick={onClickSortPopup}>
                         {sortList[sortId].name}
                       </small>
                     </p>
-                    <div className={`sort-popup ${sortPopupOpen && "active"}`}>
+                    <div
+                      className={`${styles.sortPopup} ${
+                        sortPopupOpen ? styles.active : ""
+                      }`}
+                    >
                       <Sort
                         sortId={sortId}
                         setSortId={setSortId}
@@ -237,7 +250,7 @@ export const Menu = () => {
                   </div>
                 </div>
               </div>
-              <div className="menu-products-grid">
+              <div className={styles.menuProductsGrid}>
                 {dishes.isLoaded ? dishesRender : skeletons}
               </div>
             </div>
